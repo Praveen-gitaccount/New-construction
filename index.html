@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM&D - Construction Management</title>
-    <link rel="stylesheet" href="style.css">
-<div class= "align left">
-    <iframe src="https://app.smartsheet.com/b/publish?EQBCT=419e6f3530c541ba8f26da27060530c7" width="700" height="750"></iframe>
-</div>    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CM&D - Construction Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="chatbot.js"></script>
+  <script defer src="auth.js"></script>
 </head>
 <body>
-    <header>
-        <div class="title" class= "alighn text cnetre">Construction Management & Development Inc.</div>
-        <div class="logo" class= "alighn text right">CM&D</div>
-        <button class="contact-btn">Contact Us</button>
-    </header>
+  <div class="auth-lock-screen" id="auth-screen">
+    <div class="auth-box">
+      <h2>Enter Password</h2>
+      <input type="password" id="password-input" placeholder="Password" />
+      <button onclick="checkPassword()">Access Site</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="company-title">Construction Management & Development Inc.</div>
+    <div class="header-right">
+      <div class="logo">CM&D</div>
+      <button class="contact-btn">Contact Us</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="dashboard">
+      <iframe src="https://app.smartsheet.com/b/publish?EQBCT=419e6f3530c541ba8f26da27060530c7" width="100%" height="100%"></iframe>
+    </aside>
 
     <section class="hero">
-        <div class="overlay">
-            <p>Domestic, Featured, Residential</p>
-            <h1>200 Madison Ave, NY</h1>
-            <button class="view-project">View Project</button>
-        </div>
+      <div class="overlay">
+        <p>Domestic, Featured, Residential</p>
+        <h1>200 Madison Ave, NY</h1>
+        <button class="view-project">View Project</button>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <button class="prev">Prev</button>
-        <button class="next">Next</button>
-    </footer>
-    <div id="chat-container">
-  <div id="chat-messages"></div>
-  <input type="text" id="user-input" placeholder="Talk to me.." />
-  <button id="send-btn">Send</button>
-</div>
-<script src="chatbot.js"></script>
+  <footer>
+    <button class="prev">Prev</button>
+    <button class="next">Next</button>
+  </footer>
+
+  <div id="chat-container">
+    <div id="chat-messages"></div>
+    <input type="text" id="user-input" placeholder="Talk to me.." />
+    <button id="send-btn">Send</button>
+  </div>
 </body>
 </html>
