@@ -2,8 +2,7 @@ const chatMessages = document.getElementById('chat-messages');
 const sendBtn = document.getElementById('send-btn');
 const userInput = document.getElementById('user-input');
 
-// Insert your actual OpenAI API key here
-const OPENAI_API_KEY = "your-api-key-here";  // NEVER share this publicly!
+const OPENAI_API_KEY = "your-api-key-here"; // Don't expose in production
 
 sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', (e) => {
@@ -13,10 +12,8 @@ userInput.addEventListener('keypress', (e) => {
 async function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
-
     appendMessage("You", message);
     userInput.value = "";
-
     const botResponse = await getBotResponse(message);
     appendMessage("AI", botResponse);
 }
@@ -44,4 +41,3 @@ async function getBotResponse(userMessage) {
     const data = await response.json();
     return data.choices?.[0]?.message?.content || "Sorry, I couldn’t understand that.";
 }
-script.js
