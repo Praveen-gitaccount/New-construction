@@ -1,0 +1,9 @@
+function checkPassword() {
+  const input = document.getElementById('password-input').value;
+  const correctPassword = 'yourpassword123'; // Change this to your desired password
+  if (input === correctPassword) {
+    document.getElementById('auth-screen').style.display = 'none';
+  } else {
+    alert('Incorrect password');
+  }
+}
